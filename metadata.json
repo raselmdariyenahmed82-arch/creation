@@ -1,0 +1,12 @@
+{
+  "name": "CreatorStream - Social Media & Monetization Platform",
+  "description": "A social media platform for video content creation, photo sessions, live streaming, view-based earnings, Firebase database, source file viewer, and dedicated admin panel.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+

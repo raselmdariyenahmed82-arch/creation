@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users collection
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Posts collection (Videos & Photosets)
+    match /posts/{postId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+      
+      match /comments/{commentId} {
+        allow read: if true;
+        allow write: if true;
+      }
+    }
+    
+    // Live Streams collection
+    match /live_streams/{streamId} {
+      allow read: if true;
+      allow write: if true;
+      
+      match /messages/{messageId} {
+        allow read: if true;
+        allow write: if true;
+      }
+    }
+    
+    // Withdrawals collection
+    match /withdrawals/{withdrawalId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // System Settings collection
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
